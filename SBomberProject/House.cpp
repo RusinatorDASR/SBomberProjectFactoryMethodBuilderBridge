@@ -33,15 +33,15 @@ void House::Draw() const
 {
 	ScreenSingleton::getInstance().SetColor(CC_Yellow);
 	ScreenSingleton::getInstance().GotoXY(x, y - 5);
-	cout << "  ########  ";
+	cout << look[0];
 	ScreenSingleton::getInstance().GotoXY(x, y - 4);
-	cout << "##        ##";
+	cout << look[1];
 	ScreenSingleton::getInstance().GotoXY(x, y - 3);
-	cout << "############";
+	cout << look[2];
 	ScreenSingleton::getInstance().GotoXY(x, y - 2);
-	cout << "#          #";
+	cout << look[3];
 	ScreenSingleton::getInstance().GotoXY(x, y - 1);
-	cout << "#          #";
+	cout << look[4];
 	ScreenSingleton::getInstance().GotoXY(x, y);
-	cout << "############";
+	cout << look[5];
 }

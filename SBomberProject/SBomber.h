@@ -1,6 +1,7 @@
 #pragma once
 
 #include <vector>
+#include <iostream>
 
 #include "LevelGUI.h"
 #include "Plane.h"
@@ -8,6 +9,9 @@
 #include "Ground.h"
 #include "Tank.h"
 #include "AbstractTreeCreator.h"
+#include "DirectorBuilderHouse.h"
+#include "HouseBuilderA.h"
+#include "HouseBuilderB.h"
 
 class SBomber
 {

@@ -66,6 +66,35 @@ SBomber::SBomber()
     pHouse->SetPos(80, groundY - 1);
     vecStaticObj.push_back(pHouse);
 
+	DirectorBuilderHouse dir;
+	cout << "What house use? (A/B): " << endl;
+	char x;
+	cin >> x;
+	switch (x) {
+	case 'A': {
+		HouseBuilderA builderA(pHouse);
+		dir.createHouse(builderA);
+		break;
+	}
+	case 'a': {
+		HouseBuilderA builderA(pHouse);
+		dir.createHouse(builderA);
+		break;
+	}
+	case 'B': {
+		HouseBuilderB builderB(pHouse);
+		dir.createHouse(builderB);
+		break;
+	}
+	case 'b': {
+		HouseBuilderB builderB(pHouse);
+		dir.createHouse(builderB);
+		break;
+	}
+	default:
+		break;
+	}
+
     /*
     Bomb* pBomb = new Bomb;
     pBomb->SetDirection(0.3, 1);

@@ -141,8 +141,12 @@
   <ItemGroup>
     <ClCompile Include="AbstractTreeCreator.cpp" />
     <ClCompile Include="Bomb.cpp" />
+    <ClCompile Include="DirectorBuilderHouse.cpp" />
     <ClCompile Include="Ground.cpp" />
     <ClCompile Include="House.cpp" />
+    <ClCompile Include="HouseBuilder.cpp" />
+    <ClCompile Include="HouseBuilderA.cpp" />
+    <ClCompile Include="HouseBuilderB.cpp" />
     <ClCompile Include="LevelGUI.cpp" />
     <ClCompile Include="MyTools.cpp">
       <LanguageStandard Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">stdcpp17</LanguageStandard>
@@ -161,11 +165,15 @@
   <ItemGroup>
     <ClInclude Include="AbstractTreeCreator.h" />
     <ClInclude Include="Bomb.h" />
+    <ClInclude Include="DirectorBuilderHouse.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="DynamicObject.h" />
     <ClInclude Include="Ground.h" />
     <ClInclude Include="DestroyableGroundObject.h" />
     <ClInclude Include="FileLoggerSingleton.h" />
+    <ClInclude Include="HouseBuilder.h" />
+    <ClInclude Include="HouseBuilderA.h" />
+    <ClInclude Include="HouseBuilderB.h" />
     <ClInclude Include="ScreenSingleton.h" />
     <ClInclude Include="House.h" />
     <ClInclude Include="LevelGUI.h" />
