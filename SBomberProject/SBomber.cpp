@@ -9,18 +9,21 @@
 #include "House.h"
 #include "ScreenSingleton.h"
 #include "FileLoggerSingleton.h"
+#include "TreeCreatorA.h"
+#include "TreeCreatorB.h"
 
 using namespace std;
 
 SBomber::SBomber()
-    : exitFlag(false),
-    startTime(0),
-    finishTime(0),
-    deltaTime(0),
-    passedTime(0),
-    fps(0),
-    bombsNumber(10),
-    score(0)
+	: exitFlag(false),
+	startTime(0),
+	finishTime(0),
+	deltaTime(0),
+	passedTime(0),
+	fps(0),
+	bombsNumber(10),
+	score(0),
+	treeCreator(new TreeCreatorA())
 {
 	FileLoggerSingleton::getInstance().WriteToLog(string(__FUNCTION__) + " was invoked");
 
@@ -186,6 +189,9 @@ vector<DestroyableGroundObject*> SBomber::FindDestoyableGroundObjects() const
     vector<DestroyableGroundObject*> vec;
     Tank* pTank;
     House* pHouse;
+	TreeA* pTreeA;
+	TreeB* pTreeB;
+
     for (size_t i = 0; i < vecStaticObj.size(); i++)
     {
         pTank = dynamic_cast<Tank*>(vecStaticObj[i]);
@@ -201,6 +207,20 @@ vector<DestroyableGroundObject*> SBomber::FindDestoyableGroundObjects() const
             vec.push_back(pHouse);
             continue;
         }
+
+		pTreeA = dynamic_cast<TreeA*>(vecStaticObj[i]);
+		if (pTreeA != nullptr)
+		{
+			vec.push_back(pTreeA);
+			continue;
+		}
+
+		pTreeB = dynamic_cast<TreeB*>(vecStaticObj[i]);
+		if (pTreeB != nullptr)
+		{
+			vec.push_back(pTreeB);
+			continue;
+		}
     }
 
     return vec;
@@ -298,6 +318,26 @@ void SBomber::ProcessKBHit()
     case 'B':
         DropBomb();
         break;
+
+	case '1': {
+		delete treeCreator;
+		treeCreator = new TreeCreatorA();
+		break;
+	}
+
+	case '2': {
+		delete treeCreator;
+		treeCreator = new TreeCreatorB();
+		break;
+	}
+
+	case '3': {
+		DestroyableGroundObject * pTree = treeCreator->createTree();
+		pTree->SetWidth(13);
+		pTree->SetPos(rand()%100, ScreenSingleton::getInstance().GetMaxY() - 6);
+		vecStaticObj.push_back(pTree);
+		break;
+	}
 
     default:
         break;

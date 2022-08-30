@@ -35,7 +35,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -139,6 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AbstractTreeCreator.cpp" />
     <ClCompile Include="Bomb.cpp" />
     <ClCompile Include="Ground.cpp" />
     <ClCompile Include="House.cpp" />
@@ -152,8 +153,13 @@
     <ClCompile Include="ScreenSingleton.cpp" />
     <ClCompile Include="FileLoggerSingleton.cpp" />
     <ClCompile Include="Tank.cpp" />
+    <ClCompile Include="TreeA.cpp" />
+    <ClCompile Include="TreeB.cpp" />
+    <ClCompile Include="TreeCreatorA.cpp" />
+    <ClCompile Include="TreeCreatorB.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AbstractTreeCreator.h" />
     <ClInclude Include="Bomb.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="DynamicObject.h" />
@@ -167,6 +173,10 @@
     <ClInclude Include="Plane.h" />
     <ClInclude Include="SBomber.h" />
     <ClInclude Include="Tank.h" />
+    <ClInclude Include="TreeA.h" />
+    <ClInclude Include="TreeB.h" />
+    <ClInclude Include="TreeCreatorA.h" />
+    <ClInclude Include="TreeCreatorB.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
