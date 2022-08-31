@@ -146,6 +146,7 @@ void SBomber::CheckObjects()
 	CollisionDetectorImpl* collisionDetector = new CollisionDetector;
 	collisionDetector->CheckPlaneAndLevelGUI(FindPlane(), FindLevelGUI(), exitFlag);
 	collisionDetector->CheckBombsAndGround(FindAllBombs(), FindGround(), FindDestoyableGroundObjects(), score, vecDynamicObj, vecStaticObj);
+	delete collisionDetector;
 };
 
 //void SBomber::CheckPlaneAndLevelGUI()
