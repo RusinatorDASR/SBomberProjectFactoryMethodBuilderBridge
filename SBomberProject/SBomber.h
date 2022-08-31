@@ -12,6 +12,8 @@
 #include "DirectorBuilderHouse.h"
 #include "HouseBuilderA.h"
 #include "HouseBuilderB.h"
+#include "CollisionDetectorImpl.h"
+#include "CollisionDetector.h"
 
 class SBomber
 {
@@ -57,4 +59,6 @@ private:
     int16_t score;
 
 	AbstractTreeCreator* treeCreator;
+
+	CollisionDetector* collisionDetector;
 };

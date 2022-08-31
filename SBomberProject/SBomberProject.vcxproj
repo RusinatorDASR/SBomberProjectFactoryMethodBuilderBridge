@@ -141,6 +141,8 @@
   <ItemGroup>
     <ClCompile Include="AbstractTreeCreator.cpp" />
     <ClCompile Include="Bomb.cpp" />
+    <ClCompile Include="CollisionDetector.cpp" />
+    <ClCompile Include="CollisionDetectorImpl.cpp" />
     <ClCompile Include="DirectorBuilderHouse.cpp" />
     <ClCompile Include="Ground.cpp" />
     <ClCompile Include="House.cpp" />
@@ -165,6 +167,8 @@
   <ItemGroup>
     <ClInclude Include="AbstractTreeCreator.h" />
     <ClInclude Include="Bomb.h" />
+    <ClInclude Include="CollisionDetector.h" />
+    <ClInclude Include="CollisionDetectorImpl.h" />
     <ClInclude Include="DirectorBuilderHouse.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="DynamicObject.h" />
